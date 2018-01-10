@@ -1,0 +1,20 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.9.RELEASE'
+    id 'java'
+}
+
+
+jar {
+    baseName = 'hazelcast'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("com.hazelcast:hazelcast:3.9.2")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
