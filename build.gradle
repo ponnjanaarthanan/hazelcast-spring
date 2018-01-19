@@ -10,11 +10,21 @@ jar {
 }
 
 repositories {
-    jcenter()
+    maven { url "http://s1qvap952.1dc.com:8081/nexus/content/repositories/central/" }
+    maven { url "http://s1qvap952.1dc.com:8081/nexus/content/repositories/snapshots/" }
+    maven { url "http://s1qvap952.1dc.com:8081/nexus/content/repositories/thirdparty/" }
+    maven { url "http://s1qvap952.1dc.com:8081/nexus/content/repositories/releases/" }
+    flatDir {
+    	dirs 'src'
+       dirs 'src/lib'
+       dirs 'src/lib/struts-1.3.10'
+       dirs 'src/lib/compile_only'
+       dirs 'src/lib/centrify'
+    }
 }
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("com.hazelcast:hazelcast:3.9.2")
+    compile("com.hazelcast:hazelcast:3.5.2")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
