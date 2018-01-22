@@ -158,6 +158,8 @@ public class BeanConfiguration {
         	Arrays.asList(cacheConfig.getInterfaces().split(",")).forEach(ip -> network.getInterfaces().addInterface(ip));
         }
         
+        network.setPort(3306).setPortAutoIncrement(false);
+        
         config.addListenerConfig(
         		new ListenerConfig( "com.fdc.ss.portal.cache.MergeLifecycleListener" ) );
         config.setProperty("hazelcast.logging.type", "log4j");
